@@ -19,14 +19,18 @@ def coding_test_01():
     키워드가 특수문자일 경우 검색되지 않아야 합니다. (예: '-')
     명언은 입력된 순서대로 출력되어야 합니다.
 
+    입력 설명:
+    첫 번째 줄에는 두 개의 숫자가 주어지며, 첫 번째 숫자는 명언의 개수, 두 번째 숫자는 검색어의 개수를 나타냅니다.
+    이후 정해진 개수만큼의 명언과 검색어가 주어집니다.
+
     입력 예시1:
-    5
-    자신의
+    5 1
     자신의 마음을 비우고, 새로운 것을 받아들여라. - 라오쯔
     자신의 능력을 믿어라. - 나폴레옹 힐
     자신의 선택을 존중하라. - 롭 위머
     어떤 일을 시작할 때 가장 중요한 것은 그것을 끝까지 이어가는 것이다. - 윈스턴 처칠
     자신을 믿어라. 그게 시작이다. - 존 웨인
+    자신의
 
     출력 예시1:
     자신의 마음을 비우고, 새로운 것을 받아들여라. - 라오쯔
@@ -34,32 +38,32 @@ def coding_test_01():
     자신의 선택을 존중하라. - 롭 위머
 
     입력 예시2:
-    5
-    와이즈넛
+    5 1
     자신의 마음을 비우고, 새로운 것을 받아들여라. - 라오쯔
     자신의 능력을 믿어라. - 나폴레옹 힐
     자신의 선택을 존중하라. - 롭 위머
     어떤 일을 시작할 때 가장 중요한 것은 그것을 끝까지 이어가는 것이다. - 윈스턴 처칠
     자신을 믿어라. 그게 시작이다. - 존 웨인
+    와이즈넛
 
     출력 예시2:
     키워드 '와이즈넛'을 포함하는 명언이 없습니다.
     """
 
     input = sys.stdin.readline
-    n = int(input().strip())
-    keyword = input().strip()
-    quotes = [input().strip() for _ in range(n)]
-
+    n, m = map(int, input().split())
+    quotes = list()
     index = defaultdict(set)
 
-    for docid, quote in enumerate(quotes):
+    for docid in range(n):
+        quote = input().strip()
+        quotes.append(quote)
         for token in quote.split():
             if token.isalnum():
                 token = token.lower()
                 index[token].add(docid)
 
-    keyword = keyword.lower()
+    keyword = input().strip().lower()
     if keyword in index:
         for docid in index[keyword]:
             print(quotes[docid])
