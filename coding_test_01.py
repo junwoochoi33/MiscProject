@@ -75,6 +75,4 @@ def coding_test_01():
             print(f"키워드 '{keyword}'를 포함하는 명언이 없습니다.")
 
 
-if __name__ == '__main__':
-    coding_test_01()
 
