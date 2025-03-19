@@ -15,5 +15,3 @@ def insertion_sort(arr):
 
 
 
-if __name__ == '__main__':
-    print(insertion_sort([3, 31, 48, 73, 8, 11, 20, 29, 65, 15]))
