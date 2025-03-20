@@ -22,7 +22,5 @@ def partition(arr, low, high):
     return i + 1
 
 
-if __name__ == '__main__':
-    arr = [3, 31, 48, 73, 8, 11, 20, 29, 65, 15]
-    print(quick_sort_2(arr, 0, len(arr) - 1))
+
 
