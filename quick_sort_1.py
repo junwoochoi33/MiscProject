@@ -1,5 +1,5 @@
 
-def quick_sort(arr):
+def quick_sort_1(arr):
 
     n = len(arr)
 
@@ -10,9 +10,6 @@ def quick_sort(arr):
     left_half = [value for value in arr if value < pivot]
     right_half = [value for value in arr if value > pivot]
 
-    return quick_sort(left_half) + [pivot] + quick_sort(right_half)
+    return quick_sort_1(left_half) + [pivot] + quick_sort_1(right_half)
 
 
-
-if __name__ == '__main__':
-    print(quick_sort([3, 31, 48, 73, 8, 11, 20, 29, 65, 15]))
