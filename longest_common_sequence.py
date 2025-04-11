@@ -41,3 +41,11 @@ def longest_common_subsequence(X, Y):
 
     return lcs_length, ''.join(lcs)
 
+# if __name__ == '__main__':
+#     X = "ABCBDAB"
+#     Y = "BDCABA"
+#
+#     length, lcs = longest_common_subsequence(X, Y)
+#
+#     print(f"\n✅ LCS 길이: {length}")
+#     print(f"✅ 공통 부분 수열: {lcs}")
