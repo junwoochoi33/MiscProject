@@ -1,13 +1,10 @@
-from assembly_line_scheduling import assembly_line_scheduling
+from longest_common_sequence import longest_common_subsequence
 
 if __name__ == '__main__':
-    a = [[7, 9, 3, 4, 8, 4],
-         [8, 5, 6, 4, 5, 7]]
-    t = [[2, 1, 1, 3, 4],
-         [2, 1, 2, 2, 1]]
-    e = [2, 4]
-    x = [3, 2]
+    X = "ABCBDAB"
+    Y = "BDCABA"
 
-    time, path = assembly_line_scheduling(a, t, e, x)
-    print(f"최소 시간: {time}")
-    print(f"경로: {path}")
+    length, lcs = longest_common_subsequence(X, Y)
+
+    print(f"\n✅ LCS 길이: {length}")
+    print(f"✅ 공통 부분 수열: {lcs}")
